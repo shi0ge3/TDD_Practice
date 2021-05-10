@@ -9,10 +9,10 @@ class BankTest {
 	@Test
 	void bankRate() {
 		Bank bank = new Bank();
-		bank.addRate("USD", "GBP", STANDARD_RATE);
-		bank.commission(STANDARD_COMMISSION);
+		bank.addRate("USD", "GBP", 2);
+		bank.commission(0.015);
 		Money result = bank.convert(new Note(100, "USD"), "GBP");
-		assertEquals(new Note(49.25, "GBP"), result);
+		assertEquals(new Note(100/2*(1-0.015), "GBP"), result);
 	}
 
 }
