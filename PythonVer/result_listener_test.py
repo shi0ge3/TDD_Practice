@@ -1,10 +1,13 @@
 import xunit
-import result_listener
 
 
 def testNotification(self):
+    self.count = 0
     result = xunit.TestResult()
-    listener = result_listener.ResultListener()
-    result.addListener(listener)
+    result.addListener(self)
     xunit.WasRun("testMethod").run(result)
-    assert(1 == listener.count)
+    assert(1 == self.count)
+
+
+def startTest(self):
+    self.count = self.count + 1
