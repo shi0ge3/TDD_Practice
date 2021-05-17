@@ -1,0 +1,24 @@
+package 第３部;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class FileTest {
+
+	@Test
+	public void testFileSystemError() {
+		File f = new FullFile("foo") {
+			public boolean createNewFile() throw IOException {
+				throw new IOException();
+			}
+		};
+		try {
+			saveAs(f);
+			fail();
+		} catch (IOException e) {
+
+		}
+	}
+
+}
