@@ -10,7 +10,7 @@ class FileTest {
 	@Test
 	public void testFileSystemError() {
 		File f = new FullFile("foo") {
-			public boolean createNewFile() throw IOException {
+			public boolean createNewFile() throws IOException {
 				throw new IOException();
 			}
 		};
@@ -18,8 +18,7 @@ class FileTest {
 			saveAs(f);
 			fail();
 		} catch (IOException e) {
-
+			System.out.println(e);
 		}
 	}
-
 }
