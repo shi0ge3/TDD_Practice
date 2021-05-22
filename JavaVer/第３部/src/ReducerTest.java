@@ -12,7 +12,6 @@ class Reducer {
 
 class ReducerTest {
 	Reducer reducer = new Reducer(new Polygon());
-
 	@Test
 	void test() {
 		assertEquals(0, reducer, result().npoints);
