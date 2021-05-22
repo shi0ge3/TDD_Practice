@@ -13,4 +13,12 @@ class CalcTest {
 	private int plus(int agend, int addend) {
 		return agend + addend;
 	}
+
+	@Test
+	public void testSum() {
+		assertEquals(5, sum(5, new int[]{5}));
+	}
+	private int sum(int value, int[] values) {
+		return value;
+	}
 }
