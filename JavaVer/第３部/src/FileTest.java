@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 class FileTest {
+	private File saveAs(File f) throws IOException {
+		return f;
+	}
 
 	@Test
 	public void testFileSystemError() {
