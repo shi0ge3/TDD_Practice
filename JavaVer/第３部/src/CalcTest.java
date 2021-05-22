@@ -16,9 +16,13 @@ class CalcTest {
 
 	@Test
 	public void testSum() {
-		assertEquals(5, sum(5, new int[]{5}));
+		assertEquals(12, sum(new int[]{5, 7}));
 	}
-	private int sum(int value, int[] values) {
-		return value;
+	private int sum(int[] values) {
+		int sum = 0;
+		for(int i = 0; i < values.length; i++) {
+			sum += values[i];
+		}
+		return sum;
 	}
 }
