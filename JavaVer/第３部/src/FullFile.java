@@ -1,5 +1,3 @@
-package 第３部;
-
 import java.io.IOException;
 
 private class FullFile extends File {

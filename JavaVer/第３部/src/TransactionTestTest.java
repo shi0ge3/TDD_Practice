@@ -1,5 +1,3 @@
-package 第３部;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.net.Socket;

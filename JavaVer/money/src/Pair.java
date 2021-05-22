@@ -1,5 +1,3 @@
-package money;
-
 class Pair {
 	private String from;
 	private String to;
