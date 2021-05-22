@@ -10,7 +10,6 @@ class FileTest {
 		return f;
 	}
 
-	@Test
 	public void testFileSystemError() {
 		File f = new FullFile("foo") {
 			public boolean createNewFile() throws IOException {
