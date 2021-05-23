@@ -14,12 +14,10 @@ public class EmptyRectangleTest {
     }
     @Test
     public void testEmpty() {
-        Rectangle empty = new Rectangle(0,0,0,0);
-        assertTrue(empty.isEmpty());
+        assertTrue(this.empty.isEmpty());
     }
     @Test
     public void testWidth() {
-        Rectangle empty = new Rectangle(0,0,0,0);
-        assertEquals(0.0, empty.getWidth(), 0.0);
+        assertEquals(0.0, this.empty.getWidth(), 0.0);
     }
 }
