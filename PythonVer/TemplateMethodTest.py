@@ -1,3 +1,6 @@
+from xunit import TestResult
+
+
 class TemplateMethodTest(object):
     def testTmplateMethod(self):
         test = WasRun("testMethod")
