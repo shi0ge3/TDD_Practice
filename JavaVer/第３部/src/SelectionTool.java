@@ -1,18 +1,19 @@
+import javax.swing.*;
+
 public class SelectionTool {
     Figure selected;
+    SelectionMode mode;
     public void mouseDown() {
         selected = findFigre();
         if(selected != null)
-            select(selected);
+            mode = new SingleSelectionModel(selected);
+        else
+            mode = new MultipleSelection();
     }
     public void mouseMove() {
-        if (selected != null)
-            move(selected);
-        else
-            moveSelectionRectangle();
+        mode.mouseMove();
     }
     public void mouseUp() {
-        if (selected == null)
-            selectAll();
+        mode.mousuUp();
     }
 }
