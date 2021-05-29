@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 abstract class Report {
     String printMessage;
 
@@ -5,15 +7,9 @@ abstract class Report {
         this.printMessage = printMessage;
     }
 
-    void print() {
-        switch (printMessage) {
-            case "printHTML":
-                printHTML();
-                break;
-            case "printXML":
-                printXML();
-                break;
-        }
+    void print() throws ReflectiveOperationException {
+        Method runMethod = getClass().getMethod(this.printMessage, null);
+        runMethod.invoke(this, new Class[0]);
     }
 
     void printHTML(){}

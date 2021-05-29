@@ -1,7 +1,6 @@
 public class HTMLReport extends Report {
 
-    @Override
-    void print() {
-        System.out.println("print");
+    HTMLReport(String printMessage) {
+        super(printMessage);
     }
 }
