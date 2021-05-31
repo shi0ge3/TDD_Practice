@@ -11,7 +11,7 @@ public class DrawingTest {
         d.addFigure(new RectangleFigure());
         RecordingMedium brush = new RecordingMedium();
         d.display(brush);
-        assertEquals("rectangle 0 10 50 100\n", brush.log())
+        assertEquals("rectangle 0 10 50 100\n", brush.log());
     }
 }
 
@@ -29,5 +29,6 @@ class RectangleFigure {
 class RecordingMedium {
 
     public String log() {
+        return "log";
     }
 }
