@@ -18,6 +18,14 @@ class Money {
     static Dollar dollar(int i) {
         return new Dollar(i);
     }
+
+    public static Money zero() {
+        return new Money();
+    }
+
+    public Money plus(Money balance) {
+        return new Money();
+    }
 }
 
 class Dollar extends Money {
