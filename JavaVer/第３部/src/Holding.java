@@ -2,7 +2,7 @@ public interface Holding {
     public Money balance();
 }
 
-public class Transaction implements Holding {
+class Transaction implements Holding {
     public Money balance() {
         Money value = new Money();
         return value;
