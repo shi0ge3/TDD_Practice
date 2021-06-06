@@ -12,7 +12,7 @@ public class MoneyTest {
     @Test
     public void testSumPrinting() {
         Sum sum = new Sum(Money.dollar(5), Money.franc(7));
-        assertEquals("5 USD + 7 CHF", sum.toString());
+        assertEquals("+\n\t5 US\n\t7 CHF", sum.toString());
     }
 }
 
@@ -43,7 +43,31 @@ class Sum {
     Sum(Object dollar, Object franc){}
 
     public String toString() {
-        return augend + " + " + addend;
+        IndentingStream writer = new IndentingStream();
+        toString(writer);
+        return writer.contents;
+    }
+
+    void toString(IndentingStream writer) {
+        writer.println("+");
+        writer.indent();
+        augend.toString(writer);
+        writer.println();
+        addend.toString(writer);
+        writer.exdent();
+    }
+}
+
+class IndentingStream {
+    public String contents;
+
+    public void println() {
+    }
+
+    public void indent() {
+    }
+
+    public void exdent() {
     }
 }
 
