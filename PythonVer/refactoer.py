@@ -3,7 +3,6 @@ class testSuite(object):
         self.tests = []
 
     def add(self, test):
-        self.test = test
         self.tests.append(test)
 
     def run(self, result):
