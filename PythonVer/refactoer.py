@@ -1,8 +1,14 @@
-def testSuite(self):
-    suite = testSuite
-    suite.add(WasRun("testMethod"))
-    suite.run(self.result)
-    assert("1 run, 0 failed" == self.result.summary())
+class testSuite(object):
+    def __init__(self):
+        self.tests = []
+
+    def add(self, test):
+        self.test = test
+        self.tests.append(test)
+
+    def run(self, result):
+        for test in self.teststests:
+            test.run(result)
 
 
 class TestCase:
