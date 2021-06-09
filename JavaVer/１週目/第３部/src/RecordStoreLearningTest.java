@@ -26,5 +26,26 @@ class RecordStoreLearningTest {
 		assertEquals(5, buffer[0]);
 		assertEquals(6, buffer[1]);
 	}
+}
 
+class RecordStore {
+
+	public static RecordStore openRecordStore(String testing, boolean b) {
+		return null;
+	}
+
+	public static void deleteRecordStore(String testing) {
+	}
+
+	public int addRecord(byte[] bytes, int i, int i1) {
+		return 0;
+	}
+
+	public int getRecordSize(int id) {
+		return 0;
+	}
+
+	public int getRecord(int id, byte[] buffer, int i) {
+		return 0;
+	}
 }
