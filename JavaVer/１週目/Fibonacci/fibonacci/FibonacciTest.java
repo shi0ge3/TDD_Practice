@@ -9,6 +9,6 @@ public class FibonacciTest {
     }
     @Test
     public void testFibonacci() {
-        assertEquals(0, fib(0));
+        assertEquals(1, fib(1));
     }
 }
