@@ -10,6 +10,8 @@ public class FibonacciTest {
     }
     @Test
     public void testFibonacci() {
-        assertEquals(1, fib(1));
+        int cases[][] = {{0,0},{1,1}};
+        for (int i = 0; i < cases.length; i++)
+            assertEquals(cases[i][1], fib(cases[i][1]));
     }
 }
