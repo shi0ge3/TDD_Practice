@@ -1,3 +1,5 @@
+package money;
+
 class Sum implements Expression {
 	Expression augend;
 	Expression addend;

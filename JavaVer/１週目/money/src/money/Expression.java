@@ -1,3 +1,5 @@
+package money;
+
 public interface Expression {
 	Expression times(int multiplier);
 
