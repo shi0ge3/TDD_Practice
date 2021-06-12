@@ -1,12 +1,14 @@
-from xunit import TestResult
-
-
 class TemplateMethodTest(object):
     def testTmplateMethod(self):
         test = WasRun("testMethod")
         result = TestResult()
         test.run(result)
         assert("setUp testMethod tear Down " == test.log)
+
+
+class TestResult(object):
+    pass
+
 
 class WasRun(object):
     def setUp(self):
