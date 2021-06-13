@@ -18,10 +18,8 @@ public class MoneyTest {
     @Test
     public void testMultiplication() {
         Dollar five = new Dollar(5);
-        Dollar product = five.times(2);
-        assertEquals(10, product);
-        product = five.times(3);
-        assertEquals(15, product);
+        assertEquals(10, five.times(2));
+        assertEquals(15, five.times(3));
     }
     @Test
     public void testEquality() {
