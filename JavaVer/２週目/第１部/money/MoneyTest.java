@@ -9,8 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 * $5 + 10 CHF = $10(レートが２：１の場合)
 * amount を private にする。
 * Money の丸め処理をどうする？
-* equals()
 * hashCode()
+* null との等価性比較
+* 他のオブジェクトとの等価性比較
 */
 
 public class MoneyTest {
