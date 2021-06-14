@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 * hashCode()
 * null との等価性比較
 * 他のオブジェクトとの等価性比較
+* 5 CHF * 2 = 10 CHF
 */
 
 public class MoneyTest {
@@ -25,5 +26,11 @@ public class MoneyTest {
     public void testEquality() {
         assertTrue(new Dollar(5).equals(new Dollar(5)));
         assertFalse(new Dollar(5).equals(new Dollar(6)));
+    }
+    @Test
+    public void testFrancMultiplication() {
+        Franc five = new Franc(5);
+        assertEquals(new Franc(10), five.times(2));
+        assertEquals(new Franc(15), five.times(3));
     }
 }
