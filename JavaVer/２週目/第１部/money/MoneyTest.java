@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 * 他のオブジェクトとの等価性比較
 * DollarとFrancの重複
 * timesの一般化
+* 通貨の概念
 */
 
 public class MoneyTest {
