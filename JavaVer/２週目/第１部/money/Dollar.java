@@ -8,4 +8,9 @@ class Dollar extends Money {
     Money times(int multiplier) {
         return new Dollar(amount * multiplier);
     }
+
+    @Override
+    String currency() {
+        return "USD";
+    }
 }
