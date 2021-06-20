@@ -1,16 +1,9 @@
 package money;
 
 class Franc extends Money {
-    private String currency;
-
-    Franc(int amount) {
+   Franc(int amount) {
         this.amount = amount;
         currency = "CHF";
-    }
-
-    @Override
-    String currency() {
-        return currency;
     }
 
     Money times(int multiplier) {
