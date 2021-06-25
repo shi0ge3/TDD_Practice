@@ -42,6 +42,7 @@ public class MoneyTest {
         Money sum = Money.dollar(5).plus(Money.dollar(5));
         assertEquals(Money.dollar(10), sum);
 
+        Money five = Money.dollar(5);
         Expresson sum = five.plus(five);
         Bank bank = new Bank();
         Money reduced = bank.reduce(sum, "USD");
