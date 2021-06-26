@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 * $5 + 10 CHF = $10(レートが２：１の場合)
 * $5 + $5 = $10
 * $5 + $5がMoneyを返す。
+* Bank.reduce(Money)
 * Money の丸め処理をどうする？
 * hashCode()
 * null との等価性比較
