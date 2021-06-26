@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 * TODO
 * $5 + 10 CHF = $10(レートが２：１の場合)
 * $5 + $5 = $10
+* $5 + $5がMoneyを返す。
 * Money の丸め処理をどうする？
 * hashCode()
 * null との等価性比較
@@ -44,5 +45,13 @@ public class MoneyTest {
         Bank bank = new Bank();
         Money reduced = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(10), reduced);
+    }
+    @Test
+    public void testPlusReturnsSum() {
+        Money five = Money.dollar(5);
+        Expression result = five.plus(five);
+        Sum sum = (Sum) result;
+        assertEquals(five, sum.augend);
+        assertEquals(five, sum.addend);
     }
 }
