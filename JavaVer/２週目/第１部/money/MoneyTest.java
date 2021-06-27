@@ -9,6 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 * $5 + 10 CHF = $10(レートが２：１の場合)
 * $5 + $5 = $10
 * $5 + $5がMoneyを返す。
+* Moneyを変換して換算を行う。
+* Reduce(Bank, String)
+* ----------------
+* TODO Clear
 * Bank.reduce(Money)
 * Money の丸め処理をどうする？
 * hashCode()
@@ -66,6 +70,13 @@ public class MoneyTest {
     public void testReduceMoney() {
         Bank bank = new Bank();
         Money result = bank.reduce(Money.dollar(1), "USD");
+        assertEquals(Money.dollar(1), result);
+    }
+    @Test
+    public void testReduceMoneyDifferentCurrency() {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(Money.franc(2), "USD");
         assertEquals(Money.dollar(1), result);
     }
 }
