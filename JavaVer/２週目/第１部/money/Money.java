@@ -17,6 +17,11 @@ class Money implements Expression {
         return new Sum(this, addend);
     }
 
+    @Override
+    public Money reduce(String to) {
+        return this;
+    }
+
     String currency() {
         return currency;
     }
@@ -30,7 +35,6 @@ class Money implements Expression {
     public String toString() {
         return amount + " " + currency;
     }
-
 
     static Money dollar(int amount) {
         return new Money(amount, "USD");
