@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 /*
 * TODO
 * $5 + $5がMoneyを返す。
-* Sum.plus
 * Expression.times
 * ----------------
 * TODO Clear
@@ -24,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.*;
 * $5 + $5 = $10
 * Moneyを変換して換算を行う。
 * Reduce(Bank, String)
+* Sum.plus
 */
 
 public class MoneyTest {
@@ -103,5 +103,14 @@ public class MoneyTest {
         Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
         Money result = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(15), result);
+    }
+    @Test
+    public void testSumTimes() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        Expression sum = new Sum(fiveBucks, tenFrancs).times(2);
+        Money result = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(20), result);
     }
 }
