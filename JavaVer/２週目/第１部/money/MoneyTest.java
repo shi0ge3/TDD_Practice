@@ -6,11 +6,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /*
 * TODO
-* $5 + 10 CHF = $10(レートが２：１の場合)
-* $5 + $5 = $10
 * $5 + $5がMoneyを返す。
-* Moneyを変換して換算を行う。
-* Reduce(Bank, String)
+* Sum.plus
+* Expression.times
 * ----------------
 * TODO Clear
 * Bank.reduce(Money)
@@ -22,6 +20,10 @@ import static org.junit.jupiter.api.Assertions.*;
 * timesの一般化
 * 通貨の概念
 * testFrancMultiplicationを削除する？
+* $5 + 10 CHF = $10(レートが２：１の場合)
+* $5 + $5 = $10
+* Moneyを変換して換算を行う。
+* Reduce(Bank, String)
 */
 
 public class MoneyTest {
@@ -91,5 +93,15 @@ public class MoneyTest {
         bank.addRate("CHF", "USD", 2);
         Money result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
         assertEquals(Money.dollar(10), result);
+    }
+    @Test
+    public void testSumPlusMoney() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+        Money result = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(15), result);
     }
 }
