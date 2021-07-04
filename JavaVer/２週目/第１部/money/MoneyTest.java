@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 /*
 * TODO
 * $5 + $5がMoneyを返す。
+* Sum&Moneyクラスのplusメソッドの重複
+* Expressionインタフェースをクラスに変更
 * ----------------
 * TODO Clear
 * Bank.reduce(Money)
