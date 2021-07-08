@@ -1,10 +1,10 @@
 """
 TODO
-setUpを最初に呼び出す
 tearDownを後で呼び出す
 テストメソッドが失敗したとしてもtearDownを呼び出す
 複数のテストを走らせる
 収集したテスト結果を出力する
+WasRunで文字列をログに記録する
 """
 
 
@@ -25,6 +25,7 @@ class WasRun(TestCase):
     def setUp(self):
         self.wasRun = None
         self.wasSetUp = 1
+        self.log = "setUp "
 
     def testMethod(self):
         self.wasRun = 1
@@ -40,7 +41,7 @@ class TestCaseTest(TestCase):
 
     def testSetUp(self):
         self.test.run()
-        assert(self.test.wasSetUp)
+        assert("setUp " == self.test.wasSetUp)
 
 
 print(TestCaseTest("testRunning").run())
