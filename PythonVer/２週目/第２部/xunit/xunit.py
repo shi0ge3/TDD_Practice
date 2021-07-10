@@ -32,7 +32,7 @@ class TestCaseTest(TestCase):
     def testSetUp(self):
         test = WasRun("testMethod")
         test.run()
-        assert("setUp testMethod " == self.test.wasSetUp)
+        assert("setUp testMethod tearDown" == test.log)
 
 
 print(TestCaseTest("testTemplateMethod").run())
