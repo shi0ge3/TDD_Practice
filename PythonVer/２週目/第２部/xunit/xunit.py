@@ -1,6 +1,5 @@
 """
 TODO
-tearDownを後で呼び出す
 テストメソッドが失敗したとしてもtearDownを呼び出す
 複数のテストを走らせる
 収集したテスト結果を出力する
@@ -12,6 +11,9 @@ class TestCase(object):
         self.name = name
 
     def setUp(self):
+        pass
+
+    def tearDown(self):
         pass
 
     def run(self):
@@ -33,7 +35,7 @@ class WasRun(TestCase):
 
 
 class TestCaseTest(TestCase):
-    def testSetUp(self):
+    def testTemplateMethod(self):
         test = WasRun("testMethod")
         test.run()
         assert("setUp testMethod tearDown" == test.log)
