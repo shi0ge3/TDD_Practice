@@ -8,7 +8,10 @@ TODO
 
 class TestResult(object):
     def __init__(self):
-        self.runCount = 1
+        self.runCount = 0
+
+    def testStarted(self):
+        self.runCount = self.runCount + 1
 
     def summary(self):
         return "1 run, 0 failed"
@@ -25,6 +28,8 @@ class TestCase(object):
         pass
 
     def run(self):
+        result = TestResult()
+        result.testStarted()
         self.setUp()
         method = getattr(self, self.name)
         method()
