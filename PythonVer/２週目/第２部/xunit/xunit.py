@@ -7,6 +7,9 @@ TODO
 
 
 class TestResult(object):
+    def __init__(self):
+        self.runCount = 1
+
     def summary(self):
         return "1 run, 0 failed"
 
@@ -26,6 +29,7 @@ class TestCase(object):
         method = getattr(self, self.name)
         method()
         self.tearDown()
+        return TestResult()
 
 
 class WasRun(TestCase):
@@ -51,5 +55,5 @@ class TestCaseTest(TestCase):
         assert("1 run, 0 failed" == result.summary())
 
 
-print(TestCaseTest("testTemplateMethod").run())
+TestCaseTest("testTemplateMethod").run()
 TestCaseTest("testResult").run()
