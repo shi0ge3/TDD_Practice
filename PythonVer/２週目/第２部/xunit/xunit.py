@@ -2,7 +2,7 @@
 TODO
 テストメソッドが失敗したとしてもtearDownを呼び出す
 複数のテストを走らせる
-収集したテスト結果を出力する
+失敗したテストを出力する
 """
 
 
@@ -14,7 +14,7 @@ class TestResult(object):
         self.runCount = self.runCount + 1
 
     def summary(self):
-        return "1 run, 0 failed"
+        return "%d run, 0 failed" % self.runCount
 
 
 class TestCase(object):
@@ -44,6 +44,9 @@ class WasRun(TestCase):
     def testMethod(self):
         self.log = self.log + "testMethod "
 
+    def testBrokenMethod(self):
+        raise Exception
+
     def tearDown(self):
         self.log = self.log + "tearDown "
 
@@ -52,7 +55,7 @@ class TestCaseTest(TestCase):
     def testTemplateMethod(self):
         test = WasRun("testMethod")
         test.run()
-        assert("setUp testMethod tearDown" == test.log)
+        assert("setUp testMethod tearDown " == test.log)
 
     def testResult(self):
         test = WasRun("testMethod")
@@ -67,4 +70,4 @@ class TestCaseTest(TestCase):
 
 TestCaseTest("testTemplateMethod").run()
 TestCaseTest("testResult").run()
-TestCaseTest("testFailedResult").run()
+# TestCaseTest("testFailedResult").run()
