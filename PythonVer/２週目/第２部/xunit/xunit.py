@@ -2,7 +2,7 @@
 TODO
 テストメソッドが失敗したとしてもtearDownを呼び出す
 複数のテストを走らせる
-失敗したテストを出力する
+setUpのエラーをキャッチして出力する
 """
 
 
@@ -35,9 +35,13 @@ class TestCase(object):
         result = TestResult()
         result.testStarted()
         self.setUp()
-        method = getattr(self, self.name)
-        method()
+        try:
+            method = getattr(self, self.name)
+            method()
+        except:
+            result.testFailed()
         self.tearDown()
+
         return result
 
 
