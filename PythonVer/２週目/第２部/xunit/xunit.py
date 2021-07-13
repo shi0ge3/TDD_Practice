@@ -31,8 +31,7 @@ class TestCase(object):
     def tearDown(self):
         pass
 
-    def run(self):
-        result = TestResult()
+    def run(self, result):
         result.testStarted()
         self.setUp()
         try:
@@ -52,12 +51,9 @@ class TestSuite(object):
     def add(self, test):
             self.tests.append(test)
 
-    def run(self):
-        result = TestResult()
+    def run(self, result):
         for test in self.tests:
             test.run(result)
-
-        return result
 
 
 class WasRun(TestCase):
