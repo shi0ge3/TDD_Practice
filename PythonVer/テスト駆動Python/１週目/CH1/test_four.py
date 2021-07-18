@@ -1,3 +1,4 @@
+import time
 from collections import namedtuple
 
 Task = namedtuple('Task', ['summary', 'owner', 'done', 'id'])
@@ -17,7 +18,8 @@ def test_dict():
 
 def test_replace():
     """_replace() should change passed in fields"""
+    time.sleep(0.1)
     t_before = Task('finish book', 'brian', False)
     t_after = t_before._replace(id=10, done=True)
-    t_expected = Task('finish book', 'brian', True, 11)
+    t_expected = Task('finish book', 'brian', True, 10)
     assert t_after == t_expected
